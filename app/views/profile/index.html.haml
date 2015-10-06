@@ -1,0 +1,10 @@
+%h1 #{@user.display_name}'s profile
+
+%p Registered on #{@user.created_at.strftime( '%B %d, %Y')}
+
+%p Things to do
+%ul
+  %li= link_to 'Change display name', change_display_name_path
+  %li= link_to 'Change email address', change_email_address_path
+  %li= link_to 'Change password', change_password_path
+  -#%li= link_to 'Reset my data', '#'

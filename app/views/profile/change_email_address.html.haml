@@ -1,0 +1,11 @@
+%h1 Change email address
+
+= form_tag( change_email_address_path, method: :post) do
+
+  .form-group{ class: ('has-error' if @post_error) }
+    = label_tag 'change_email_address_email_address', 'Email address', class: 'control-label'
+    = text_field_tag 'change_email_address[email_address]'
+    = form_error_list( @user, :email )
+
+  .form-group
+    = submit_tag 'Save'

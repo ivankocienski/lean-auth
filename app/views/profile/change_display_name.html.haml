@@ -1,0 +1,11 @@
+%h1 Update display name
+
+= form_tag( change_display_name_path, method: :post) do
+
+  .form-group{ class: ('has-error' if @post_error) }
+    = label_tag 'user_display_name', 'Display name', class: 'control-label'
+    = text_field_tag 'user[display_name]', @user.display_name
+    = form_error_list( @user, :display_name )
+
+  .form-group
+    = submit_tag 'Save'
